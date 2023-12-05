@@ -1,0 +1,24 @@
+---
+import Logo from './tesla-logo.astro'
+---
+<header class="flex justify-between px-9 items-center w-full fixed top-0 text-sm font-medium text-white z-50" >
+    <Logo/>
+    <nav> 	
+        <ul class="flex [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-4">
+            <li><a href="#">Vehicles</a></li>
+            <li><a href="#">Energy</a></li>
+            <li><a href="#">Charging</a></li>
+            <li><a href="#">Discover</a></li>
+            <li><a href="#">Shop</a></li>
+        </ul>
+    </nav>
+    
+    <nav>
+        <ul class="flex [&>li>a]:inline-block [&>li>a]:px-2">
+            <li><a class="img1" href="#"><img src="/public/help.svg" alt="help"></a></li>
+            <li><a href="#"><img src="/public/language.svg" alt="language"></a></li>
+            <li><a href="#"><img src="/public/profile.svg" alt="profile"></a></li>
+        </ul>
+    </nav>
+</header>
+

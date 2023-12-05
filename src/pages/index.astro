@@ -1,89 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Logo from '../components/tesla-logo.astro'
-
+import Header from '../components/header.astro'
 ---
 
 <Layout title="Welcome to Astro."> 
 	<main>
-		<header class="flex justify-between px-9 items-center w-full fixed top-0 text-sm font-medium" >
-			<Logo/>
-			<nav> 	
-				<ul class="flex [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-4">
-					<li><a href="#">Vehicles</a></li>
-					<li><a href="#">Energy</a></li>
-					<li><a href="#">Charging</a></li>
-					<li><a href="#">Discover</a></li>
-					<li><a href="#">Shop</a></li>
-				</ul>
-			</nav>
-			
-			<nav>
-				<ul class="flex [&>li>a]:inline-block [&>li>a]:px-2">
-					<li><a href="#">help</a></li>
-					<li><a href="#">language</a></li>
-					<li><a href="#">profile</a></li>
-				</ul>
-			</nav>
-		</header>
+		<Header/>
+		<section class="bg-black h-screen w-screen text-center relative overflow-hidden">
+			<header class="z-40 relative py-20 text-white" >
+				<h1 class="text-[42px] font-medium">Model Y</h1>
+				<p class="text-xl" > Lease starting at $399/mo*</p>
+			</header>
+
+			<footer class="z-40 inline-flex relative gap-6 py-[300px] font-medium text-sm">
+				<div class=" bg-black text-white py-3 bg-opacity-80 rounded-[4px] backdrop-filter backdrop-blur-[4px]">
+					<a class="px-24 py-3" href="#">Order Now</a>
+				</div>
+				<div class="bg-white py-3 rounded-[4px] bg-opacity-80 backdrop-filter backdrop-blur-[4px]">
+					<a class="px-24 py-3" href="#">Demo Drive</a>
+				</div>
+			</footer>
+			<video class="absolute top-0 bottom-0" loop autoplay muted src="/video.mp4"></video>
+		</section>
 	</main>
 </Layout>
-
-<!--<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style> -->
