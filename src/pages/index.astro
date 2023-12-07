@@ -1,26 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Header from '../components/header.astro'
+import LandingHeader from '../components/LandingHeader.astro'
+import Section from '../components/Section.astro'
 ---
 
 <Layout title="Welcome to Astro."> 
 	<main>
-		<Header/>
-		<section class="bg-black h-screen w-screen text-center relative overflow-hidden">
-			<header class="z-40 relative py-20 text-white" >
-				<h1 class="text-[42px] font-medium">Model Y</h1>
-				<p class="text-xl" > Lease starting at $399/mo*</p>
-			</header>
-
-			<footer class="z-40 inline-flex relative gap-6 py-[300px] font-medium text-sm">
-				<div class=" bg-black text-white py-3 bg-opacity-80 rounded-[4px] backdrop-filter backdrop-blur-[4px]">
-					<a class="px-24 py-3" href="#">Order Now</a>
-				</div>
-				<div class="bg-white py-3 rounded-[4px] bg-opacity-80 backdrop-filter backdrop-blur-[4px]">
-					<a class="px-24 py-3" href="#">Demo Drive</a>
-				</div>
-			</footer>
-			<video class="absolute top-0 bottom-0" loop autoplay muted src="/video.mp4"></video>
-		</section>
+		<LandingHeader/>
+		<Section title='Model Y' price='Lease starting at $399/mo*' demoDrive='Demo Drive'/>
+		<Section title='Model Y' price='Lease starting at $399/mo*' demoDrive='Demo Drive'/>
 	</main>
 </Layout>
