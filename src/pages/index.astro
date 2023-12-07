@@ -3,11 +3,112 @@ import Layout from '../layouts/Layout.astro'
 import LandingHeader from '../components/LandingHeader.astro'
 import Section from '../components/Section.astro'
 ---
+/**
+ * This file represents the landing page of the Tesla website.
+ * It imports the necessary components and sets the layout.
+ * The page consists of three sections, each showcasing a different Tesla model.
+ * Each section includes a title, price, size text, buttons, and an image or video.
+ */
 
-<Layout title="Welcome to Astro."> 
-	<main>
-		<LandingHeader/>
-		<Section title='Model Y' price='Lease starting at $399/mo*' demoDrive='Demo Drive'/>
-		<Section title='Model Y' price='Lease starting at $399/mo*' demoDrive='Demo Drive'/>
-	</main>
+<Layout title="Welcome to Tesla."> 
+	<LandingHeader/>
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto ">
+		<div class="snap-center">
+			<!--Landing #1 -->
+			<Section title='Model Y'
+			 price='Lease starting at $399/mo*'
+			 sizeText='text-xl'>
+
+			 <div slot="btn/btn's" 
+			 class="bg-black 
+			 text-white 
+			 py-3 
+			 bg-opacity-70
+			 rounded-[4px]
+			 backdrop-filter
+			 backdrop-blur-[4px]">
+				<a class="px-24 py-3" href="#">Order Now</a>
+			</div>
+
+			<div slot="btn/btn's" 
+			class="bg-white
+			 py-3 
+			 rounded-[4px] 
+			 bg-opacity-70 
+			 backdrop-filter 
+			 backdrop-blur-[4px]">
+				<a class="px-24 py-3" href="#">Demo Drive</a>
+			</div>
+
+			 <video slot="image/video" class="absolute top-0 bottom-0 object-cover h-full w-full" loop autoplay muted src="/video.mp4">
+			</video>
+			</Section>
+			<!--Finish landing #1 -->
+		</div>
+		
+		<div class="snap-center">
+			<!--Landing #2 -->
+			<Section title='Model 3'
+			 price='Lease starting at $329/mo*'
+			 sizeText='text-xl'>
+
+			 <div slot="btn/btn's" 
+			 class="
+			 bg-white 
+			 text-black 
+			 py-3 
+			 bg-opacity-70
+			 rounded-[4px]
+			 backdrop-filter
+			 backdrop-blur-[4px]">
+				<a class="px-24 py-3" href="#">Explore inventory</a>
+			</div>
+
+			<div slot="btn/btn's" 
+			class="bg-black 
+			 text-white
+			 py-3 
+			 rounded-[4px] 
+			 bg-opacity-70 
+			 backdrop-filter 
+			 backdrop-blur-[4px]">
+				<a class="px-24 py-3" href="#">Demo Drive</a>
+			</div>
+
+			<picture slot="image/video">
+				<img class="absolute top-0 bottom-0 object-cover h-full w-full" src="/Homepage-Model-3-.avif" alt="">
+			</picture>
+			</Section>
+			<!--Finish landing #2 -->
+		</div>
+
+		<div class="snap-center">
+			<!--Landing #3 -->
+			<Section title='Experience Tesla'
+			 price='Schedule a Demo Drive Today'
+			 sizeText='text-sm'>
+            
+			 <div slot="btn/btn's" 
+			 class="
+			 rounded-sm
+			 border-white
+			 border-[3px]
+			 text-white 
+			 py-2
+			 backdrop-filter
+			 backdrop-blur-[4px]" >
+				<a class= "px-[85px] py-2" href="#">Demo Drive</a>
+			</div>
+
+			 <video 
+			 slot="image/video" 
+			 class="absolute top-0 
+			 bottom-0 
+			 object-cover 
+			 h-full w-full" 
+			 src="/public/video-2.webm" 
+			 loop muted autoplay/>
+			</Section>
+			<!--Finish landing #3 -->
+		</div>
 </Layout>

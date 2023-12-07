@@ -1,10 +1,23 @@
 ---
 import Logo from './tesla-logo.astro'
 ---
-<header class="flex justify-between px-9 items-center w-full fixed top-0 text-sm font-medium text-white z-50" >
+
+/**
+ * Represents the header component for the Tesla landing page.
+ * 
+ * This component displays the Tesla logo, a menu button, and navigation links.
+ * It also includes additional navigation links for help, language, and profile.
+ * The header is fixed at the top of the page and has a responsive design.
+ * 
+ * @component
+ */
+<header class="sm:pt-0 pt-3 flex justify-between px-9 items-center w-full fixed top-0 text-sm font-medium text-white z-50" >
     <Logo/>
-    <nav> 	
-        <ul class="flex [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-4">
+    <div class="sm:hidden backdrop-blur-xl px-3 py-2 rounded-md">
+        <a class="font-medium" href="#">Menu</a>
+    </div>
+    <nav class="sm:inline-block hidden"> 	
+        <ul class="flex [&>li>a]:inline-block gap-7 [&>li>a]:py-4">
             <li><a href="#">Vehicles</a></li>
             <li><a href="#">Energy</a></li>
             <li><a href="#">Charging</a></li>
@@ -13,12 +26,11 @@ import Logo from './tesla-logo.astro'
         </ul>
     </nav>
     
-    <nav>
-        <ul class="flex [&>li>a]:inline-block [&>li>a]:px-2">
+    <nav class="sm:inline-block hidden">
+        <ul class="flex [&>li>a]:inline-block gap-4">
             <li><a class="img1" href="#"><img src="/public/help.svg" alt="help"></a></li>
             <li><a href="#"><img src="/public/language.svg" alt="language"></a></li>
             <li><a href="#"><img src="/public/profile.svg" alt="profile"></a></li>
         </ul>
     </nav>
 </header>
-

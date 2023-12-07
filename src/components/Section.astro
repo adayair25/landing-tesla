@@ -1,24 +1,30 @@
 ---
+/**
+ * Represents a section component with a title, price, and size text.
+ *
+ * @interface Props
+ * @property {string} title - The title of the section.
+ * @property {string} price - The price of the section.
+ * @property {string} sizeText - The size text of the section.
+ */
+
 interface Props {
     title: string;
-    price : string;
-    demoDrive: string;
-}
-const {title, price, demoDrive} = Astro.props;
+    price: string;
+    sizeText: string;
+} 
+
+const { title, price, sizeText} = Astro.props;
+
 ---
 <section class="bg-black h-screen text-center relative overflow-hidden">
     <header class="z-40 relative py-20 text-white" >
         <h1 class="text-[42px] font-medium">{title}</h1>
-        <p class="text-xl" >{price}</p>
+        <p class=`${sizeText}` >{price}</p>
     </header>
-
-    <footer class="z-40 inline-flex relative gap-6 py-[300px] font-medium text-sm">
-        <div class=" bg-black text-white py-3 bg-opacity-75 rounded-[4px] backdrop-filter backdrop-blur-[4px]">
-            <a class="px-24 py-3" href="#">Order Now</a>
-        </div>
-        <div class="bg-white py-3 rounded-[4px] bg-opacity-75 backdrop-filter backdrop-blur-[4px]">
-            <a class="px-24 py-3" href="#">{demoDrive}</a>
-        </div>
+    
+    <footer class="sm:inline-flex py-[300px] z-40 relative gap-6  font-medium text-sm">
+        <slot name="btn/btn's"/>
     </footer>
-    <video class="absolute top-0 bottom-0 object-cover h-full w-full" loop autoplay muted src="/video.mp4"></video>
+    <slot name="image/video"/>
 </section>
